@@ -49,8 +49,8 @@ SIMPLE_JWT = {
 # Application definition
 
 INSTALLED_APPS = [
-    "restframework",
-    "rest_farmework_simplejwt",
+    "rest_framework",
+    "rest_framework_simplejwt",
     "apps",
     "django.contrib.admin",
     "django.contrib.auth",
