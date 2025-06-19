@@ -1,16 +1,9 @@
-from datetime import date, timedelta
-
-from django.shortcuts import render
-from django.utils.dateparse import parse_date
 from rest_framework import generics, permissions, viewsets
-from.serializers import UserSerializer
 from django.contrib.auth.models import User
 from rest_framework.permissions import IsAuthenticated
 from .models import Expense
 from .serializers import ExpenseSerializer
 from datetime import date, timedelta
-from django.utils.dateparse import parse_date
-
 from .serializers import RegisterSerializer
 
 class RegisterView(generics.CreateAPIView):
