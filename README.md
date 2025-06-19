@@ -1,16 +1,65 @@
-# Expense-Tracker-API
+# 💸 Expense Tracker API
 
+API-сервис для отслеживания пользовательских расходов. Поддерживает регистрацию и авторизацию через JWT, управление расходами, фильтрацию по датам и просмотр статистики.
 
-Метод	URL	Назначение
-GET	/api/expenses/	Получить список всех расходов текущего пользователя
-GET	/api/expenses/?period=past_week	За последнюю неделю
-GET	/api/expenses/?period=past_month	За последний месяц
-GET	/api/expenses/?period=last_3_months	За последние 3 месяца
-GET	/api/expenses/?start_date=YYYY-MM-DD&end_date=YYYY-MM-DD	Фильтр по диапазону дат
-POST	/api/expenses/	Создать новый расход
-GET	/api/expenses/<id>/	Получить один конкретный расход
-PATCH	/api/expenses/<id>/	Частично обновить расход
-PUT	/api/expenses/<id>/	Полностью заменить расход
-DELETE	/api/expenses/<id>/	Удалить расход
+---
 
-Bearer TOken
+## 🚀 Возможности
+
+- Регистрация и вход пользователя
+- Аутентификация через JWT (access / refresh токены)
+- CRUD-операции для расходов
+- Категории расходов:
+  - Groceries
+  - Leisure
+  - Electronics
+  - Utilities
+  - Clothing
+  - Health
+  - Others
+- Фильтрация по периодам:
+  - past_week
+  - past_month
+  - last_3_months
+  - custom (по `start_date` и `end_date`)
+- Сортировка по дате создания, сумме и другим полям
+- Swagger документация
+
+```bash
+
+python3 -m venv venv
+
+source venv/bin/activate
+
+pip install -r requirements.txt
+
+python3.11 core/manage.py makemigration  
+python3.11 core/manage.py migrate
+
+python3.11 core/manage.py createsuperuser
+```
+---
+## 🔐 Аутентификация
+Используется JWT через djangorestframework-simplejwt.
+
+# 🔸 Регистрация
+- POST /api/auth/register/
+
+json:
+{
+  "username": "testuser",
+  "email": "test@test.com",
+  "password": "secret"
+}
+
+# 🔸 Вход
+- POST /api/auth/login/
+
+json:
+
+{
+  "username": "testuser",
+  "password": "secret"
+}
+ # Также 
+- использовать Authorization: Bearer <access_token>
