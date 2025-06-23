@@ -1,11 +1,12 @@
 version: '3.9'
 
 services:
-  web:
-    build: .
+  backend:
+    build:
+      context: ./backend
     container_name: expense_tracker_api
     command: python core/manage.py runserver 0.0.0.0:8000
-    working_dir: /app
+    working_dir: /backend
     ports:
       - "8000:8000"
     volumes:
@@ -25,6 +26,13 @@ services:
       POSTGRES_DB: expense_db
       POSTGRES_USER: expense_user
       POSTGRES_PASSWORD: expense_pass
+
+  frontend:
+    build:
+      context: ./frontend/vue-app
+    ports:
+      - "5173:5173"
+    container_name: vue_frontend
 
 volumes:
   postgres_data:

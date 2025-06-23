@@ -1,2 +1,41 @@
 venv/
 .env
+
+# Backend (если используется Python)
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.env
+.env.*
+*.sqlite3
+db.sqlite3
+venv/
+*.log
+*.pot
+
+# Docker
+*.pid
+*.sock
+*.db
+*.tar
+*.gz
+
+# VSCODE
+.vscode/
+
+# OS-specific
+.DS_Store
+Thumbs.db
+
+# Frontend
+/frontend/vue-app/node_modules/
+frontend/vue-app/dist/
+frontend/vue-app/.vite/
+frontend/vue-app/.env.local
+frontend/vue-app/.env.*.local
+frontend/vue-app/.output/
+frontend/vue-app/npm-debug.log*
+frontend/vue-app/yarn-debug.log*
+frontend/vue-app/yarn-error.log*
+frontend/vue-app/pnpm-debug.log*
