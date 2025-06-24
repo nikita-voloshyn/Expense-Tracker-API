@@ -12,7 +12,7 @@ services:
     volumes:
       - .:/app
     env_file:
-      - .env
+      - backend/core/.env
     depends_on:
       - db
 
@@ -29,10 +29,12 @@ services:
 
   frontend:
     build:
-      context: ./frontend/vue-app
+      context: ./frontend/my-auth-app
     ports:
       - "5173:5173"
-    container_name: vue_frontend
+    container_name: react_frontend
+    depends_on:
+      - backend
 
 volumes:
   postgres_data:

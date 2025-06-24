@@ -1,12 +1,12 @@
 venv/
-.env
+backend/core/.env
 
 # Backend (если используется Python)
 __pycache__/
 *.pyc
 *.pyo
 *.pyd
-.env
+backend/core/.env
 .env.*
 *.sqlite3
 db.sqlite3
